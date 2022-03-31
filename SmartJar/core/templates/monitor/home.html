@@ -15,16 +15,20 @@
 {% endif %} -->
 
 <div class="container-fluid" style="margin-top:2rem;">
-       <h2 class="text-center">Welcome to our Website</h2> 
+       
        <br/>
        <div class="container">
               <!-- <div class="text-center">
                      <img src="https://us.123rf.com/450wm/artursz/artursz1808/artursz180802982/106481176-word-writing-text-lost-found-business-concept-for-things-that-are-left-behind-and-may-retrieve-to-th.jpg?ver=6" class="img-fluid" alt="...">
               </div> -->
               <!-- <br> -->
-              <p class="text-center" style="color:rgb(58, 2, 104)"><b>
-                     
-                     </b>
+              <p class="text-center" style="color:rgb(58, 2, 104)">
+                     {%if request.user.is_authenticated %} 
+                     <iframe width="450" height="260" style="border: 1px solid #f0ee8d;" src="https://thingspeak.com/channels/1689665/charts/1?bgcolor=%23f0ee8d&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                     <iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/1689665/charts/2?bgcolor=%23f0ee8d&color=%23d62020&dynamic=true&results=60&type=line&update=15"></iframe>
+                     {% else %}
+                     <h2 class="text-center">Welcome to our Website</h2> 
+                     {% endif %}
               </p>
               
        </div>
